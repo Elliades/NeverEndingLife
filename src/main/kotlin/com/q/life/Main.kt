@@ -1,6 +1,7 @@
 package com.q.life
 import kotlinx.coroutines.*
 import Server.WorldServer
+import com.q.life.clientcontroler.BouncyCell
 import com.q.projects.datamodele.BasicCell
 import com.q.projects.metamodele.Cell
 import com.q.projects.metamodele.Position
@@ -26,6 +27,7 @@ fun initWorld(): World {
     world.addCell(BasicCell("species1", Position(10.0, 10.0), 5.0))
     world.addCell(BasicCell("species2", Position(20.0, 20.0), 5.0))
     world.addCell(BasicCell("species3", Position(00.0, 20.0), 10.0))
+    world.addCell(BouncyCell("species3", Position(200.0, 200.0), 10.0))
     return world;
 
 }

@@ -2,12 +2,13 @@ package com.q.projects.datamodele
 
 import com.q.projects.metamodele.Position
 import com.q.projects.metamodele.Cell
+import com.q.projects.metamodele.WorldHolder
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.sin
 
 open class BasicCell(name: String, position: Position, size: Double) : Cell(name, position, size) {
-constructor() : this("default", Position(0.0, 0.0), 0.0)
+    constructor() : this("default", Position(0.0, 0.0), 0.0)
     override fun move() {
         // Mettez à jour la direction de manière aléatoire mais fluide.
         direction += (Math.random() - 0.5) * PI / 18 // Change la direction de max +/- 10 degrés.
@@ -24,8 +25,8 @@ constructor() : this("default", Position(0.0, 0.0), 0.0)
         if (newX - size < 0) {
             position.x = size
             direction = PI - direction
-        } else if (newX + size > worldWidth) {
-            position.x = worldWidth - size
+        } else if (newX + size > WorldHolder.world!!.width) {
+            position.x = WorldHolder.world!!.width - size
             direction = PI - direction
         } else {
             position.x = newX
@@ -35,8 +36,8 @@ constructor() : this("default", Position(0.0, 0.0), 0.0)
         if (newY - size < 0) {
             position.y = size
             direction = -direction
-        } else if (newY + size > worldHeight) {
-            position.y = worldHeight - size
+        } else if (newY + size > WorldHolder.world!!.height) {
+            position.y = WorldHolder.world!!.height - size
             direction = -direction
         } else {
             position.y = newY

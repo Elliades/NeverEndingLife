@@ -24,6 +24,7 @@ abstract class Cell(val name: String, var position: Position, var size: Double) 
     fun die(){
         isAlive = false
         System.out.println("Cell $name died")
+        WorldHolder.world!!.removeCell(this)
     }
     fun birth(){
         isAlive = true

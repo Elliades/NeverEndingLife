@@ -13,6 +13,10 @@ class World(val width: Double, val height: Double) {
         quadtree.insert(cell) // Insérer la cellule dans le Quadtree
     }
 
+    fun removeCell(cell: Cell) {
+        cells.remove(cell)
+    }
+
     fun updateQuadtree() {
         quadtree.clear() // Effacer le Quadtree pour le rafraîchir
         cells.forEach { quadtree.insert(it) } // Réinsérer les cellules

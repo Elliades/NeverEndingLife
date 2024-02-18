@@ -1,20 +1,22 @@
-package com.q.life.clientcontroler
+package com.q.life.clientcontroler;
 
 import com.q.life.clientcontroller.BouncyMovement
-import com.q.projects.datamodele.BasicCell
-import com.q.projects.metamodele.Position
-import kotlin.random.Random
+import com.q.projects.datamodele.BasicCell;
+import com.q.projects.metamodele.Position;
+import kotlin.random.Random;
 
 class BouncyCell(name: String, position: Position, size: Double) : BasicCell(name, position, size) {
     constructor() : this("default", Position(0.0, 0.0), 0.0)
-    private val bouncyMovement = BouncyMovement(this, slowdownDistance = 5.0)
+    private var bouncyMovement:BouncyMovement
 
     init {
+        bouncyMovement = BouncyMovement(this)
         bouncyMovement.targetPosition = Vector(generateRandomPosition())
     }
+
     fun generateRandomPosition(): Position {
         val x = Random.nextDouble(position.x - speed, position.x + speed)
-        val y =  Random.nextDouble(position.y - speed, position.y + speed)
+        val y = Random.nextDouble(position.y - speed, position.y + speed)
         return Position(x, y)
     }
 

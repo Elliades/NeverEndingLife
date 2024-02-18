@@ -1,14 +1,30 @@
 package com.q.projects.metamodele
 
+import kotlinx.coroutines.*
+
 
 abstract class Cell(val name: String, var position: Position, var size: Double) {
     constructor() : this("default", Position(0.0, 0.0), 0.0)
 
+    init {
+    }
     abstract fun move()
     abstract fun eat(other: Cell)
     abstract fun behavior(species: List<Cell>)
     abstract fun die()
-    abstract fun birth()
+    fun birth(){
+        startRoutine()
+    }
+
+    private fun startRoutine() {
+        CoroutineScope(Dispatchers.Default).launch() {
+            while (isActive) { // Boucle tant que la coroutine est active
+                move()
+                delay(10L) // refresh rate of 100Hz
+            }
+        }
+    }
+
     var speed = 5.0 /size
     var direction = Math.random() * 2 * Math.PI //direction in radians
 

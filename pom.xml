@@ -17,12 +17,6 @@
     </properties>
 
     <dependencies>
-        <!-- Dépendance Kotlin -->
-        <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib-jdk8</artifactId>
-            <version>${kotlin.version}</version>
-        </dependency>
 
         <!-- Dépendances pour Kotlin Coroutines -->
         <dependency>
@@ -30,13 +24,18 @@
             <artifactId>kotlinx-coroutines-core</artifactId>
             <version>${kotlinx.coroutines.version}</version>
         </dependency>
-
-        <!-- Dépendances pour Kotlin Coroutines pour JDK8 (si nécessaire) -->
         <dependency>
             <groupId>org.jetbrains.kotlinx</groupId>
-            <artifactId>kotlinx-coroutines-jdk8</artifactId>
+            <artifactId>kotlinx-coroutines-javafx</artifactId>
             <version>${kotlinx.coroutines.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+
+
 
         <!-- Dépendances JavaFX -->
         <dependency>
@@ -72,6 +71,7 @@
             <artifactId>jackson-module-kotlin</artifactId>
             <version>2.13.0</version>
         </dependency>
+
     </dependencies>
 
     <build>

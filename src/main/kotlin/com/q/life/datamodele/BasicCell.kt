@@ -60,7 +60,4 @@ open class BasicCell(name: String, position: Position, size: Double) : Cell(name
         TODO("Not yet implemented")
     }
 
-    override fun birth() {
-        TODO("Not yet implemented")
-    }
 }

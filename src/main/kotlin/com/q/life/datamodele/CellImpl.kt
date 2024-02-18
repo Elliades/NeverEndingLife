@@ -22,9 +22,7 @@ class CellImpl (name:String, position:Position, size:Double): Cell(name, positio
         System.out.println("NOT YET IMPLEMENTED")
     }
 
-    override fun birth() {
-        System.out.println("NOT YET IMPLEMENTED")
-    }
+
 
 
 }

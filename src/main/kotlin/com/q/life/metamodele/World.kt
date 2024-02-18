@@ -5,6 +5,7 @@ class World(val width: Double, val height: Double) {
 
     fun addCell(cell: Cell) {
         this.cells.add(cell)
+        cell.birth()
     }
 
     fun update() {

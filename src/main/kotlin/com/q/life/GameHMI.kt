@@ -32,11 +32,6 @@ class GameHMI: Application(){
 
         object : AnimationTimer() {
             override fun handle(currentNanoTime: Long) {
-                // Update the world and cells
-                world.cells.forEach { cell ->
-                    cell.move()
-                }
-
                 // Clear the canvas
                 gc.clearRect(0.0, 0.0, canvas.width, canvas.height)
 

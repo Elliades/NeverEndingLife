@@ -5,6 +5,7 @@ import com.q.projects.metamodele.Position
 import kotlin.random.Random
 
 class CellImpl(name: String, position: Position, size: Double) : BasicCell(name, position, size) {
+    constructor() : this("default", Position(0.0, 0.0), 0.0)
     private val bouncyMovement = BouncyMovement(Vector(position), maxSpeed = 1.0, slowdownDistance = 5.0)
 
     init {

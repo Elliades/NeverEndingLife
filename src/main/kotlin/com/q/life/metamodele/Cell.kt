@@ -1,6 +1,8 @@
 package com.q.projects.metamodele
 
 abstract class Cell(val name: String, var position: Position, var size: Double) {
+    constructor() : this("default", Position(0.0, 0.0), 0.0)
+
     abstract fun move()
     abstract fun eat(other: Cell)
     abstract fun behavior(species: List<Cell>)
@@ -8,8 +10,10 @@ abstract class Cell(val name: String, var position: Position, var size: Double) 
     abstract fun birth()
     var speed = 5.0 / size
     var direction = Math.random() * 2 * Math.PI //direction in radians
-    var worldWidth = WorldHolder.world!!.width
-    var worldHeight = WorldHolder.world!!.height
+    var worldWidth: Double = 500.0
+        get() = WorldHolder.world!!.width
+    var worldHeight: Double = 500.0
+        get() = WorldHolder.world!!.height
 
 
     fun calculateDistance(position1: Position, position2: Position): Double {

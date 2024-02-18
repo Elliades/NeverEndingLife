@@ -1,5 +1,6 @@
 package com.q.life.clientcontroler
 
+import com.google.gson.Gson
 import com.q.projects.metamodele.Cell
 import com.q.projects.metamodele.Position
 import java.io.*
@@ -20,7 +21,7 @@ class WorldBuilder(val host: String, val port: Int) {
 }
 
 fun main(args: Array<String>) {
-    val builder = WorldBuilder("localhost", 9999)
+    val builder = WorldBuilder("localhost", 9950)
     // Exemple : "x,y,radius"
     builder.addCell(CellImpl("BouncyCell", Position(100.0, 100.0), 10.0))
 }

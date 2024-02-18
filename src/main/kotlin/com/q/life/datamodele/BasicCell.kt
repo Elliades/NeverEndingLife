@@ -7,7 +7,7 @@ import kotlin.math.cos
 import kotlin.math.sin
 
 open class BasicCell(name: String, position: Position, size: Double) : Cell(name, position, size) {
-
+constructor() : this("default", Position(0.0, 0.0), 0.0)
     override fun move() {
         // Mettez à jour la direction de manière aléatoire mais fluide.
         direction += (Math.random() - 0.5) * PI / 18 // Change la direction de max +/- 10 degrés.

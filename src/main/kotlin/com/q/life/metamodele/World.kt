@@ -1,6 +1,6 @@
 package com.q.projects.metamodele
 
-class World(val width: Int, val height: Int) {
+class World(val width: Double, val height: Double) {
     var cells: MutableList<Cell> = mutableListOf()
 
     fun addCell(cell: Cell) {
@@ -15,4 +15,13 @@ class World(val width: Int, val height: Int) {
     fun draw() {
         // This method will be responsible for displaying the species in the UI
     }
+
+    fun initialize(){
+
+    }
+}
+
+object WorldHolder {
+    var world: World? = null
+
 }

@@ -6,6 +6,11 @@ abstract class Cell(val name: String, var position: Position, var size: Double) 
     abstract fun behavior(species: List<Cell>)
     abstract fun die()
     abstract fun birth()
+    var speed = 5.0 / size
+    var direction = Math.random() * 2 * Math.PI //direction in radians
+    var worldWidth = WorldHolder.world!!.width
+    var worldHeight = WorldHolder.world!!.height
+
 
     fun calculateDistance(position1: Position, position2: Position): Double {
         return Math.sqrt(Math.pow(position2.x - position1.x, 2.0) + Math.pow(position2.y - position1.y, 2.0))

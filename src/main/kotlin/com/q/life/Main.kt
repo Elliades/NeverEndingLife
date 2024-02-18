@@ -49,6 +49,6 @@ fun initWorld(): World {
 }
 
 suspend fun sleepAndCreateRandomCell() {
-    delay(10000) // Utilisation de delay au lieu de Thread.sleep pour une meilleure intégration avec les coroutines
+    delay(5000) // Utilisation de delay au lieu de Thread.sleep pour une meilleure intégration avec les coroutines
     WorldBuilder.initServer().createXRandomCell(Random().nextInt(1, 10))
 }

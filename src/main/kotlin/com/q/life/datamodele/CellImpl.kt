@@ -10,17 +10,10 @@ class CellImpl (name:String, position:Position, size:Double): Cell(name, positio
         System.out.println("NOT YET IMPLEMENTED")
     }
 
-    override fun eat(other: Cell) {
-        System.out.println("NOT YET IMPLEMENTED")
-    }
-
     override fun behavior(species: List<Cell>) {
         System.out.println("NOT YET IMPLEMENTED")
     }
 
-    override fun die() {
-        System.out.println("NOT YET IMPLEMENTED")
-    }
 
 
 

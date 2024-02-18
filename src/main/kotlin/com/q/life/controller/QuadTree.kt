@@ -2,12 +2,13 @@ package com.q.projects.controller
 
 import com.q.projects.metamodele.Cell
 import com.q.projects.metamodele.Rectangle
+import java.util.concurrent.CopyOnWriteArrayList
 
 class Quadtree(
     private val boundary: Rectangle,
     private val capacity: Int
 ) {
-    private var cells: MutableList<Cell> = mutableListOf()
+    private var cells: MutableList<Cell> = CopyOnWriteArrayList()
     private var divided: Boolean = false
     private var topLeft: Quadtree? = null
     private var topRight: Quadtree? = null
@@ -47,6 +48,7 @@ class Quadtree(
     }
 
     // Fonction pour rechercher des cellules potentiellement en collision
+    @Synchronized
     fun query(range: Rectangle, found: MutableList<Cell> = mutableListOf()): MutableList<Cell> {
         if (!boundary.intersects(range)) {
             return found

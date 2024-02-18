@@ -44,20 +44,12 @@ open class BasicCell(name: String, position: Position, size: Double) : Cell(name
         }
     }
 
-    override fun eat(other: Cell) {
-        val samePosition = other.position.equals(this.position)
-        if (samePosition){
-            other.die();
-            this.size += other.size*0.50;
-        }
-    }
+
 
     override fun behavior(species: List<Cell>) {
         // Implement the specific species' behavior here
     }
 
-    override fun die() {
-        TODO("Not yet implemented")
-    }
+
 
 }
